@@ -14,9 +14,9 @@ Once you have run the exporter against your design system, you can start using t
 - [x] `colors.json` containing all colors tokens
 - [x] `typography.json` containing all typography classes
 - [x] `shadows.json` containing all shadow tokens
-- [] `gradients.json` containing all gradient tokens
-- [] `measures.json` containing all measure tokens
-- [] `radii.json` containin all radius tokens
+- [ ] `gradients.json` containing all gradient tokens
+- [ ] `measures.json` containing all measure tokens
+- [ ] `radii.json` containin all radius tokens
 
 Each of the `.json` files can be used inside other tools. The exporter properly follows the structuring of the tokens inside respective categories, adding groups as nesting inside the definition:
 
