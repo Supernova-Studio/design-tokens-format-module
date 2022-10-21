@@ -1,0 +1,45 @@
+{* Example Output
+
+{
+    "group-1-name": {
+        "group-2-name": {
+            "token-name": {
+                "type": "shadow",
+                "value": {
+                    "color": {
+                        "type": "color",
+                        "value": "#ffffff"
+                    },
+                    "x": {
+                        "type": "size",
+                        "value": 0
+                    },
+                    "y": {
+                        "type": "size",
+                        "value": 0
+                    },
+                    "radius": {
+                        "type": "size",
+                        "value": 0
+                    },
+                    "spread": {
+                        "type": "size",
+                        "value": 0
+                    },
+                    "opacity": {
+                        "type": "size",
+                        "value": 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+*}
+{[ let brand = ds.currentBrand() /]}
+{[ const allTokens = ds.allTokens(brand.id) /]}
+{[ const allGroups = ds.allTokenGroups(brand.id) /]}
+{[ const rootGroup = ds.tokenGroupTreeByType("Shadow", brand.id) /]}
+{[ const sdTree = generateStyleDictionaryTree(rootGroup, allTokens, allGroups) /]}
+{{ objectToPrettyJson(sdTree) }}

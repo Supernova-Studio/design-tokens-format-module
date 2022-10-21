@@ -1,0 +1,24 @@
+{
+    "id": "io.supernova.w3c-tokens-format",
+    "name": "Design Tokens Format Module",
+    "description": "Export Supernova to Design Tokens Format Module define by W3C DCTG.",
+    "author": "Supernova",
+    "organization": "Supernova",
+    "source_dir": "src",
+    "version": "0.1.0",
+    "usesBrands": true,
+    "config": {
+        "sources": "sources.json",
+        "output": "output.json",
+        "js": "src/js/compiled.js"
+    },
+    "engines": {
+        "pulsar": "1.0.0",
+        "supernova": "1.0.0"
+    },
+    "tags": [
+        "Style Dictionary",
+        "Tokens",
+        "Styles"
+    ]
+}

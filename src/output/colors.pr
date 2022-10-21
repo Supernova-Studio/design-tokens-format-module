@@ -1,0 +1,16 @@
+{* Example Output
+
+{
+    "Token name": {
+        "$type": "color",
+        "$value": "#ffffff"
+    }
+}
+
+*}
+{[ let brand = ds.currentBrand() /]}
+{[ const allTokens = ds.allTokens(brand.id) /]}
+{[ const allGroups = ds.allTokenGroups(brand.id) /]}
+{[ const rootGroup = ds.tokenGroupTreeByType("Color", brand.id) /]}
+{[ const sdTree = generateStyleDictionaryTree(rootGroup, allTokens, allGroups) /]}
+{{ objectToPrettyJson(sdTree) }}

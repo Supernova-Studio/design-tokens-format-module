@@ -1,0 +1,34 @@
+{* Example Output
+
+{
+    "group-1-name": {
+        "group-2-name": {
+            "token-name": {
+                "type": "border",
+                "value": {
+                    "color": {
+                        "type": "color",
+                        "value": "#ffffff"
+                    },
+                    "width": {
+                        "type": "measure",
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "position": {
+                        "type": "string",
+                        "value": "inside"
+                    } 
+                }
+            }
+        }
+    }
+}
+
+*}
+{[ let brand = ds.currentBrand() /]}
+{[ const allTokens = ds.allTokens(brand.id) /]}
+{[ const allGroups = ds.allTokenGroups(brand.id) /]}
+{[ const rootGroup = ds.tokenGroupTreeByType("Border", brand.id) /]}
+{[ const sdTree = generateStyleDictionaryTree(rootGroup, allTokens, allGroups) /]}
+{{ objectToPrettyJson(sdTree) }}
