@@ -5,22 +5,6 @@
             "write_to": "colors.json"
         },
         {
-            "invoke": "borders.pr",
-            "write_to": "borders.json"
-        },
-        {
-            "invoke": "gradients.pr",
-            "write_to": "gradients.json"
-        },
-        {
-            "invoke": "measures.pr",
-            "write_to": "measures.json"
-        },
-        {
-            "invoke": "radii.pr",
-            "write_to": "radii.json"
-        },
-        {
             "invoke": "shadows.pr",
             "write_to": "shadows.json"
         },

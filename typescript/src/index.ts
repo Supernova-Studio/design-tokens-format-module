@@ -320,30 +320,12 @@ function representShadowTokenValue(value: ShadowTokenValue, allTokens: Array<Tok
   } else {
     // Raw value
     result = {
-      color: {
-        type: "color",
-        value: representColorTokenValue(value.color, allTokens, allGroups),
-      },
-      x: {
-        type: "measure",
-        value: representMeasureTokenValue(value.x, allTokens, allGroups),
-      },
-      y: {
-        type: "measure",
-        value: representMeasureTokenValue(value.y, allTokens, allGroups),
-      },
-      radius: {
-        type: "measure",
-        value: representMeasureTokenValue(value.radius, allTokens, allGroups),
-      },
-      spread: {
-        type: "measure",
-        value: representMeasureTokenValue(value.spread, allTokens, allGroups),
-      },
-      opacity: {
-        type: "size",
-        value: value.opacity,
-      },
+      color: representColorTokenValue(value.color, allTokens, allGroups),
+      offsetX: representMeasureTokenValue(value.x, allTokens, allGroups),
+      offsetY: representMeasureTokenValue(value.y, allTokens, allGroups),
+      blur: representMeasureTokenValue(value.radius, allTokens, allGroups),,
+      spread: representMeasureTokenValue(value.spread, allTokens, allGroups),
+      
     }
   }
 

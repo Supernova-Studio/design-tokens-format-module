@@ -12,31 +12,29 @@ The Design Tokens Format Module Exporter allows you to **convert Supernova token
 Once you have run the exporter against your design system, you can start using the code in your codebase right away. Exporter creates the following definitions:
 
 - [x] `colors.json` containing all colors tokens
-- [x] `fonts.json` containing all font tokens
-- [x] `gradients.json` containing all gradient tokens
-- [x] `measures.json` containing all measure tokens
-- [x] `radii.json` containin all radius tokens
-- [x] `shadows.json` containing all shadow tokens
-- [x] `text.json` containing all semantic labels
 - [x] `typography.json` containing all typography classes
+- [x] `shadows.json` containing all shadow tokens
+- [] `gradients.json` containing all gradient tokens
+- [] `measures.json` containing all measure tokens
+- [] `radii.json` containin all radius tokens
 
-Each of the `.json` files can be used inside style dictionary. The exporter properly follows the structuring of the tokens inside respective categories, adding groups as nesting inside the definition:
+Each of the `.json` files can be used inside other tools. The exporter properly follows the structuring of the tokens inside respective categories, adding groups as nesting inside the definition:
 
 ```
 {
   "color": {
     "ui-elements": {
       "primary": {
-        "value": "#4589ffff",
-        "type": "color"
+        "$value": "#4589ffff",
+        "$type": "color"
       },
       "success": {
-        "value": "#00a454ff",
-        "type": "color"
+        "$value": "#00a454ff",
+        "$type": "color"
       },
       "critical": {
-        "value": "#d23031ff",
-        "type": "color"
+        "$value": "#d23031ff",
+        "$type": "color"
       }
    }
 }
@@ -63,7 +61,7 @@ In this case, `critical` token was defined inside `Colors` category, in `success
 
 Finally, if you are tokens using mixins - such as using `measure` tokens inside typography, the exporter draws from those as well and **will properly export all references**, even across different definition trees. This way, everything you defined in Supernova is **always** exported.
 
-### Comments & Descriptions
+### Descriptions
 
 If you are using token descriptions, the exporter includes them under `comment` key:
 
@@ -72,17 +70,17 @@ If you are using token descriptions, the exporter includes them under `comment` 
   "text": {
     "welcome-screen": {
       "sign-in": {
-        "value": "Please Sign In",
-        "type": "text",
-        "comment": "Use this everywhere user creates a new account"
+        "$value": "Please Sign In",
+        "$type": "text",
+        "$description": "Use this everywhere user creates a new account"
       },
       "sign-out": {
-        "value": "Sign Out from the application",
-        "type": "text"
+        "$value": "Sign Out from the application",
+        "$type": "text"
       },
       "forgot-password": {
-        "value": "Did you forget your password?",
-        "type": "text"
+        "$value": "Did you forget your password?",
+        "$type": "text"
       }
     }
   }
@@ -91,10 +89,14 @@ If you are using token descriptions, the exporter includes them under `comment` 
 
 Multi-line descriptions are also supported, and will be exported with `\n` where newline occurs. If the token doesn't have a description, the `comment` key is not generated.
 
+### Known limitations
+
+- Typography tokens exports only values that are supported by the Design Tokens Format Module, not for all typography properties that we have in Supernova. Missing typoraphy values: (tbd)
+
 
 ## Installing
 
-In order to make the Supernova Style Dictionary exporter available for your organization so you can start generating code from your design system, please follow the installation guide in our [developer documentation](https://developers.supernova.io/using-exporters/installing-exporters).
+In order to make the Supernova Design Tokens Format Module exporter available for your organization so you can start generating code from your design system, please follow the installation guide in our [developer documentation](https://developers.supernova.io/using-exporters/installing-exporters).
 
 
 ## Reporting Bugs or Requesting Features
